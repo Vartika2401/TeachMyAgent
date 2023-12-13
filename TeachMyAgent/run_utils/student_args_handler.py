@@ -28,7 +28,7 @@ class StudentArgsHandler(AbstractArgsHandler):
         parser.add_argument('--half_save', '-hs', action='store_true')
         parser.add_argument('--no_save', action='store_true')
         parser.add_argument('--steps_per_ep', type=int,
-                            default=50)  # nb env steps/epoch (stay above max_ep_len and nb_env_steps)
+                            default=5)  # nb env steps/epoch (stay above max_ep_len and nb_env_steps)
         parser.add_argument('--reset_frequency', type=int, default=None)
 
         # SAC specific
