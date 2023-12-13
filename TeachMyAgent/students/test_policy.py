@@ -136,11 +136,8 @@ def load_fixed_test_set(save_path, test_set_name):
     '''
     teacher_dict = load_env_params(save_path)
     teacher_param_env_bounds = OrderedDict(teacher_dict["env_param_bounds"])
-    # print(teacher_dict)
-    # test_param_vec = np.array(pickle.load(open("TeachMyAgent/teachers/test_sets/" + test_set_name + ".pkl", "rb")))
-    # print(test_param_vec)
-    test_param_vec = "TeachMyAgent/teachers/test_sets/"
-    # test_param_vec = np.array(pickle.load("C:\\Users\\Vartika\\Documents\\GitHub\\TeachMyAgent\\TeachMyAgent\\teachers\\test_sets\\old\\hexagon_test_set.pkl", "rb"))
+    test_param_vec = np.array(pickle.load(open("TeachMyAgent/teachers/test_sets/" + test_set_name + ".pkl", "rb")))
+
     return [param_vec_to_param_dict(teacher_param_env_bounds, vec) for vec in test_param_vec]
 
 def load_env(save_path, load_test_env=False):
@@ -337,4 +334,3 @@ if __name__ == '__main__':
     parser = get_parser()
     args = parser.parse_args()
     main(args)
-

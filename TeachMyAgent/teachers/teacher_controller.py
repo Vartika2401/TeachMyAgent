@@ -26,11 +26,13 @@ def param_vec_to_param_dict(param_env_bounds, param):
     param_dict = OrderedDict()
     cpt = 0
     for i,(name, bounds) in enumerate(param_env_bounds.items()):
+        print(i,name,bounds)
         if type(bounds[0]) is list:
             nb_dims = len(bounds)
             param_dict[name] = param[cpt:cpt+nb_dims]
             cpt += nb_dims
         else:
+            print(bounds)
             if len(bounds) == 2:
                 param_dict[name] = param[cpt]
                 cpt += 1
